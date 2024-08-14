@@ -3,7 +3,7 @@
 	"id": "water-in-the-nether",
 	"version": "${version}",
 	"name": "Water In The Nether",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "what...",
 	"authors": [
 		"Grape"
 	],
@@ -22,6 +22,6 @@
 		"fabricloader": ">=0.15.11",
 		"minecraft": ">=1.21",
 		"java": ">=21",
-		"fabric-api": ">=0.100.3+1.21"
+		"fabric-api": ">=0.102.1+1.21.1"
 	}
 }

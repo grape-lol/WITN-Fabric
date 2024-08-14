@@ -14,13 +14,13 @@ base {
 modrinth {
 	token = System.getenv("MODRINTH_TOKEN") // Remember to have the MODRINTH_TOKEN environment variable set or else this will fail - just make sure it stays private!
 	projectId = "water-in-the-nether" // This can be the project ID or the slug. Either will work!
-	versionNumber = "2.0.0+1.21" // You don't need to set this manually. Will fail if Modrinth has this version already
-	versionName = "2.0.0+1.21"
+	versionNumber = "3.0.2" // You don't need to set this manually. Will fail if Modrinth has this version already
+	versionName = "3.0.2"
 	versionType = "release" // This is the default -- can also be `beta` or `alpha`
 	uploadFile = jar // With Loom, this MUST be set to `remapJar` instead of `jar`!
-	gameVersions = ["1.21"] // Must be an array, even with only one version
-	loaders = ["fabric"] // Must also be an array - no need to specify this if you're using Loom or ForgeGradle
-	changelog = "- Update 1.21"
+	gameVersions = ["1.21.1"] // Must be an array, even with only one version
+	loaders = ["fabric", "quilt"] // Must also be an array - no need to specify this if you're using Loom or ForgeGradle
+	changelog = "- 1.21.1 Support"
 	dependencies {
 		required.project "fabric-api" // Creates a new required dependency on Fabric API
 	}
