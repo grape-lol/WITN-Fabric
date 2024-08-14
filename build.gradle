@@ -1,5 +1,8 @@
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
+
 plugins {
 	id "com.modrinth.minotaur" version "2.+"
+	id 'net.darkhax.curseforgegradle' version '1.1.15'
 	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
 }
@@ -24,6 +27,20 @@ modrinth {
 	dependencies {
 		required.project "fabric-api" // Creates a new required dependency on Fabric API
 	}
+}
+
+task fabric_publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
+	apiToken = "$System.env.CURSEFORGE_TOKEN"
+	int projectId = 1039341
+
+	def mainFile = upload(projectId, remapJar)
+	mainFile.changelog = "- 1.21.1 Support"
+	mainFile.changelogType = "markdown"
+	mainFile.releaseType = "release"
+	mainFile.displayName = "3.0.2"
+	mainFile.addGameVersion("1.21.1")
+	mainFile.addRequirement("fabric-api")
+	mainFile.addModLoader("fabric")
 }
 
 repositories {
